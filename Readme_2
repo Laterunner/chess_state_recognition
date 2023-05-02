@@ -1,0 +1,11 @@
+This repository is a copy from sta314's repository, which is fully functioning, 
+well written and well documented.
+The version here can be used for chess board corner detection only. Detection is achieved with 
+conventional image processing techniques (Open Cv, Canny edge detetection and Hough line 
+transformation in a rather complicated and slow pipeline. The corner coordinates can be 
+saved in a file for later use. 
+The program parts concerning piece detection with Yolo were deactivated.
+The program was intended to run on a Nvidia Jetson Xavier. I wanted to avoid mouse 
+clicks to identify chess board corners on images with chess boards.
+The program is slow but reliable and corner detection was much superior than the methods I tried
+using a cnn and yolo.
