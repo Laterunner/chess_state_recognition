@@ -56,7 +56,9 @@ def main():
             f = os.path.join(path, filename)
             img = cv2.imread(f)
             
-            chessboard = return_board_from_image(img, imported_model, False, isRoboflow)
+            chessboard = return_board_from_image(img, imported_model, False, isRoboflow
+            exit("program stopped after retrieving corners")  # added to exit
+            
             if chessboard is None:
                 print("Failed for ", filename)
                 continue
