@@ -29,7 +29,7 @@ def return_board_from_image(img, model, log = True, isRoboflow = False):
     #print("corner 1", c1)
     #print("corner 2", c2)
     #print("corner 3", c3)
-    #print("corner 3", c4)
+    #print("corner 4", c4)
 
     img = cv2.circle(img, (c1[1], c1[0]), radius=3, color=(0, 255, 0), thickness= -1)
     img = cv2.circle(img, (c2[1], c2[0]), radius=3, color=(0, 255, 0), thickness= -1)
