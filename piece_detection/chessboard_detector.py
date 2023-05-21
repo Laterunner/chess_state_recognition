@@ -1,4 +1,5 @@
 import numpy as np
+import cv2
 from chessboard_location.chessboard_finder import get_chessboard_intersections
 from piece_detection.utils_chess import create_chessboard_from_board_array
 from piece_detection.utils_corners import create_chessboard_array_from_assignments, denormalize_piece_info, get_squares_from_corners, is_top_left_white, match_pieces_with_squares
