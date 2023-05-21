@@ -23,9 +23,9 @@ def return_board_from_image(img, model, log = True, isRoboflow = False):
     ########### inserted some lines to print out and save four outer corners ###########
     # corners clockwise starting upper left
     c1 = corners[0][0]
-    c2 = corners[0][8]
+    c2 = corners[8][0]
     c3 = corners[8][8]
-    c4 = corners[8][0]
+    c4 = corners[0][8]
     #print("corner 1", c1)
     #print("corner 2", c2)
     #print("corner 3", c3)
