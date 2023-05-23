@@ -26,7 +26,7 @@ def return_board_from_image(img, model, log = True, isRoboflow = False):
     print("array corners saved to file")
     print()
     
-    ########### inserted some lines  print out outer and save array of corners to file ###########
+    ########### inserted some lines  to print out outer corners and save the corner array to a file ###########
     # corners clockwise starting upper left (yx values)
     c1 = corners[0][0]
     c2 = corners[8][0]
