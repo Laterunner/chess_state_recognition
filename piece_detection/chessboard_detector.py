@@ -21,7 +21,11 @@ def return_board_from_image(img, model, log = True, isRoboflow = False):
     corners = get_chessboard_intersections(img)
     if corners is None:
         return None
-
+    
+    np.save("cornersmb", corners)
+    print("array corners savedto file")
+    print()
+    
     ########### inserted some lines to print out and save four outer corners ###########
     # corners clockwise starting upper left
     c1 = corners[0][0]
@@ -49,38 +53,27 @@ def return_board_from_image(img, model, log = True, isRoboflow = False):
     c3inv = c3[::-1]
     c4inv = c4[::-1]
 
-    ### L1 = list y,x with outer corners V1
-    ### L1 = [str(c1) + "\n", str(c2) + "\n", str(c3) + "\n", str(c4 ) + "\n"]
-    ### print("corners as array [y x]", L1)  
-    
-    ### list yx with outercorners V2
-    ### first convert array to list:
-    ### uncomment next four lines if needed
     l_top       = c1.tolist()
     r_top       = c2.tolist()
     r_bottom    = c3.tolist()
     l_bottom    = c4.tolist() 
 
-    ### list xy with outercorners V2
-    ### first convert array to list:
     l_topinv    = c1inv.tolist()
     r_topinv    = c2inv.tolist()
     r_bottominv = c3inv.tolist()
     l_bottominv = c4inv.tolist() 
 
     ### clockwise corners x,y
-
     L2 = l_topinv, r_topinv, r_bottominv, l_bottominv
+    ### clockwise corners y,x
     L4 = l_top, r_top, r_bottom, l_bottom
 
-    print("corners as list, [x, y]:", L2[0:4])
-
-    ### Writing to file
+    ### Writing to myfile.txt
     with open("myfile.txt", "w") as file1:
-        # Writing data to a file
-        file1.write("Corners xy 1-4 written to file\n")
+        file1.write("Corners x,y 1-4 written to file\n")
         file1.writelines(str(L2))
-        file1.writelines("\n")
+        file1.writelines("\n")       
+        file1.write("Corners y,x 1-4 written to file\n")
         file1.writelines(str(L4))
 
     # Reading from file
