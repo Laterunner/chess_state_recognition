@@ -23,15 +23,15 @@ def return_board_from_image(img, model, log = True, isRoboflow = False):
         return None
     
     np.save("cornersmb", corners)
-    print("array corners saved to file")
+    print("array corners saved to file 'cornersmb'")
     print()
     
     ########### inserted some lines  to print out outer corners and save the corner array to a file ###########
     # corners clockwise starting upper left (yx values)
     c1 = corners[0][0]
     c2 = corners[8][0]
-    c3 = corners[8][8]
-    c4 = corners[0][8]
+    c3 = corners[0][8]
+    c4 = corners[8][8]
 
     ### if needed invert corners (xy):
     c1inv = c1[::-1]
